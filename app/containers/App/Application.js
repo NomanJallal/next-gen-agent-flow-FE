@@ -13,6 +13,7 @@ import {
   Parent,
   Agents,
   AgentCreation,
+  AgentWorkflowManagment,
 } from '../pageListAsync';
 
 function Application(props) {
@@ -34,6 +35,7 @@ function Application(props) {
         {/* New pages */}
         <Route path="/agents" element={<Agents />} />
         <Route path="/agents/creation" element={<AgentCreation />} />
+        <Route path="/agents/workflow_managment" element={<AgentWorkflowManagment />} />
       </Routes>
     </Dashboard>
   );

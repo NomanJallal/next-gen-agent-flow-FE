@@ -79,3 +79,8 @@ export const AgentCreation = loadable(() =>
   import('./Pages/AgentCreation'), {
   fallback: <Loading />,
 });
+
+export const AgentWorkflowManagment = loadable(() =>
+  import('./Pages/AgentWorkflowManagment'), {
+  fallback: <Loading />,
+});

@@ -14,6 +14,7 @@ import {
   Agents,
   AgentCreation,
 } from '../pageListAsync';
+import AgentWorkFlow from '../Pages/AgentWorkFlow';
 
 function Application(props) {
   const { history } = props;
@@ -34,6 +35,7 @@ function Application(props) {
         {/* New pages */}
         <Route path="/agents" element={<Agents />} />
         <Route path="/agents/creation" element={<AgentCreation />} />
+        <Route path="/agents/agent-workFlow" element={<AgentWorkFlow />} />
       </Routes>
     </Dashboard>
   );

@@ -35,7 +35,7 @@ const darkPalette = {
         contrastText: '#fff',
       },
       text: {
-        primary: '#000000',
+        primary: '#FFFFFF',
         disable: '#B4B4B5',
       },
       divider: '#E0E0E0',

@@ -24,7 +24,7 @@ module.exports = [
     key: 'workflows',
     name: 'Workflows',
     link: '/app/workflows',
-    icon: 'schema',
+    icon: 'account_tree',
     parent: true,
   },
   // {

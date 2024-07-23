@@ -8,6 +8,7 @@ function Papper(props) {
   const {
     children,
     whiteBg,
+    disablePadding,
     noMargin,
     colorMode,
     overflowX,
@@ -30,6 +31,7 @@ function Papper(props) {
           cx(
             classes.root,
             noMargin && classes.noMargin,
+            disablePadding && classes.disablePadding,
             color(colorMode)
           )
         }

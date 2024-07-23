@@ -89,3 +89,8 @@ export const AgentWorkFlow = loadable(() =>
   import('./Pages/AgentWorkFlow'), {
   fallback: <Loading />,
 });
+
+export const CallLogs = loadable(() =>
+  import('./Pages/CallLogs'), {
+  fallback: <Loading />,
+});

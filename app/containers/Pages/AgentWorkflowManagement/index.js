@@ -4,14 +4,13 @@ import { Helmet } from 'react-helmet';
 import brand from 'enl-api/dummy/brand';
 import { Papper } from 'enl-components';
 import { injectIntl } from 'react-intl';
-import { Stack } from '@mui/material';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
 import Header from './comps/Header';
 
-function AgentWorkflowManagment(props) {
+function AgentWorkflowManagement(props) {
     const { intl } = props;
-    const title = brand.name + ' - Agent Workflow Managment';
+    const title = brand.name + ' - Agent Workflow Management';
     const description = brand.desc;
     const [currentTab, setCurrentTab] = useState('builder');
 
@@ -46,6 +45,6 @@ function AgentWorkflowManagment(props) {
     );
 }
 
-AgentWorkflowManagment.propTypes = { intl: PropTypes.object.isRequired };
+AgentWorkflowManagement.propTypes = { intl: PropTypes.object.isRequired };
 
-export default injectIntl(AgentWorkflowManagment);
+export default injectIntl(AgentWorkflowManagement);

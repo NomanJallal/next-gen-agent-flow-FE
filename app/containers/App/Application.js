@@ -16,6 +16,7 @@ import {
   AgentWorkflowManagment,
   AgentWorkFlow,
 } from '../pageListAsync';
+import CoustomWebHooks from '../Pages/CoustomWebHooks';
 
 function Application(props) {
   const { history } = props;
@@ -38,6 +39,7 @@ function Application(props) {
         <Route path="/agents/creation" element={<AgentCreation />} />
         <Route path="/agents/workflow_managment" element={<AgentWorkflowManagment />} />
         <Route path="/agents/agent_workflow" element={<AgentWorkFlow />} />
+        <Route path="/agents/Custom-webHooks" element={<CoustomWebHooks />} />
       </Routes>
     </Dashboard>
   );

@@ -89,3 +89,8 @@ export const AgentWorkFlow = loadable(() =>
   import('./Pages/AgentWorkFlow'), {
   fallback: <Loading />,
 });
+
+export const CoustomWebHooks = loadable(() =>
+  import('./Pages/CoustomWebHooks'), {
+  fallback: <Loading />,
+});

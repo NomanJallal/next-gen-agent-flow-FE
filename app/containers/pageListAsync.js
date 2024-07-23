@@ -80,17 +80,22 @@ export const AgentCreation = loadable(() =>
   fallback: <Loading />,
 });
 
-export const AgentWorkflowManagment = loadable(() =>
-  import('./Pages/AgentWorkflowManagment'), {
+export const AgentWorkflows = loadable(() =>
+  import('./Pages/AgentWorkflows'), {
   fallback: <Loading />,
 });
 
-export const AgentWorkFlow = loadable(() =>
-  import('./Pages/AgentWorkFlow'), {
+export const AgentWorkflowManagement = loadable(() =>
+  import('./Pages/AgentWorkflowManagement'), {
   fallback: <Loading />,
 });
 
-export const CoustomWebHooks = loadable(() =>
-  import('./Pages/CoustomWebHooks'), {
+export const AgentWorkflowTemplates = loadable(() =>
+  import('./Pages/AgentWorkflowTemplates'), {
+  fallback: <Loading />,
+});
+
+export const CallLogs = loadable(() =>
+  import('./Pages/CallLogs'), {
   fallback: <Loading />,
 });

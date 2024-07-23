@@ -12,9 +12,9 @@ import WorkflowTable from './comps/WorkflowTable';
 // dummy
 import { rows } from './data';
 
-function AgentWorkflowManagment(props) {
+function AgentWorkflows(props) {
     const { intl } = props;
-    const title = brand.name + ' - Agents Workflow Managment';
+    const title = brand.name + ' - Agent Workflows';
     const description = brand.desc;
 
     return (
@@ -62,6 +62,6 @@ function AgentWorkflowManagment(props) {
     );
 }
 
-AgentWorkflowManagment.propTypes = { intl: PropTypes.object.isRequired };
+AgentWorkflows.propTypes = { intl: PropTypes.object.isRequired };
 
-export default injectIntl(AgentWorkflowManagment);
+export default injectIntl(AgentWorkflows);

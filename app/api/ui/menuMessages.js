@@ -508,12 +508,20 @@ export default defineMessages({
     id: `${scope}.pages.agnets_creation`,
     defaultMessage: 'Agents master setting/creation',
   },
-  workflow_managment: {
-    id: `${scope}.pages.workflow_managment`,
-    defaultMessage: 'Agent Workflow managment',
+  workflows: {
+    id: `${scope}.pages.workflows`,
+    defaultMessage: 'Agent Workflows',
   },
-  agnet_workflow: {
-    id: `${scope}.pages.agent_workflow`,
+  management: {
+    id: `${scope}.pages.management`,
+    defaultMessage: 'Agent Workflow management',
+  },
+  workflow_templates: {
+    id: `${scope}.pages.workflow_templates`,
     defaultMessage: 'Create agent workflow from template',
+  },
+  call_logs: {
+    id: `${scope}.pages.call_logs`,
+    defaultMessage: 'Call Logs',
   },
 });

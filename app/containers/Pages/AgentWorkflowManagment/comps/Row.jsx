@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import { TableCell, TableRow, Collapse, Chip } from '@mui/material';
 import { IconButton } from '@mui/material';
 import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
 import WorkflowTable from './WorkflowTable';
-import useStyles from './table-jss';
+import ContextMenu from './ContextMenu';
 
 const Row = ({ row }) => {
-    const [show, setShow] = React.useState(false);
-    const { classes } = useStyles();
+    const [show, setShow] = useState(false);
+    const [contextMenu, setContextMenu] = useState(null);
+    const [contextMenuData, setContextMenuData] = useState(null);
+
+    const onContextMenu = (e, data) => {
+        e.preventDefault();
+        if (!e.currentTarget) return;
+        if (!data) {
+            setContextMenuData(null);
+            return;
+        }
+        setContextMenuData(data);
+        setContextMenu({ mouseX: e.clientX - 2, mouseY: e.clientY - 4 });
+    };
+
     return (
         <>
-            <TableRow>
+            <TableRow onContextMenu={(e) => onContextMenu(e, row)}>
                 <TableCell className={'firstCell'}>
                     {row?.subflow?.length ? (
                         <IconButton size='small' sx={{
@@ -36,7 +49,6 @@ const Row = ({ row }) => {
                 <TableCell align="center" className='lastCell'>{row.activeEnrolled}</TableCell>
             </TableRow>
 
-            {/* {row?.subflow?.length && show ? ( */}
             <TableRow className={'noHover'}>
                 <TableCell style={{ padding: 0 }} colSpan={5}>
                     <Collapse in={row?.subflow?.length && show} timeout="auto" unmountOnExit>
@@ -47,7 +59,14 @@ const Row = ({ row }) => {
                     </Collapse>
                 </TableCell>
             </TableRow>
-            {/* ) : null} */}
+
+            {/* Conntext Menu */}
+            <ContextMenu
+                anchorEl={contextMenu}
+                setAnchorEl={setContextMenu}
+                row={contextMenuData}
+                setRow={setContextMenuData}
+            />
         </>
     )
 }

@@ -516,4 +516,8 @@ export default defineMessages({
     id: `${scope}.pages.agent_workflow`,
     defaultMessage: 'Create agent workflow from template',
   },
+  call_logs: {
+    id: `${scope}.pages.call_logs`,
+    defaultMessage: 'Call Logs',
+  },
 });

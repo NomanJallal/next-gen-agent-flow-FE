@@ -3,9 +3,9 @@ import { darken } from '@mui/material/styles';
 
 const useStyles = makeStyles()((theme, _params, classes) => ({
   root: {
-    padding: `${theme.spacing(2)} ${theme.spacing(2)}`,
+    padding: theme.spacing(2),
     marginBottom: theme.spacing(3),
-    boxShadow: theme.shade.light,
+    boxShadow: theme?.shade?.light,
     color: theme.palette.text.primary,
     borderRadius: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
@@ -13,6 +13,9 @@ const useStyles = makeStyles()((theme, _params, classes) => ({
     },
     [`&.${classes.noMargin}`]: {
       margin: 0
+    },
+    [`&.${classes.disablePadding}`]: {
+      padding: 0
     },
   },
   colorDark: {

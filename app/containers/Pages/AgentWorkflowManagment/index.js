@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import brand from 'enl-api/dummy/brand';
 import { Papper } from 'enl-components';
 import { injectIntl } from 'react-intl';
-import { Stack, Avatar, Typography } from '@mui/material';
-import { AccountTreeRounded } from '@mui/icons-material';
-import TableWrapper from './comps/TableWrapper';
-import WorkflowTable from './comps/WorkflowTable';
-
-// dummy
-import { rows } from './data';
+import { Stack } from '@mui/material';
+import TabContext from '@mui/lab/TabContext';
+import TabPanel from '@mui/lab/TabPanel';
+import Header from './comps/Header';
 
 function AgentWorkflowManagment(props) {
     const { intl } = props;
-    const title = brand.name + ' - Agents Workflow Managment';
+    const title = brand.name + ' - Agent Workflow Managment';
     const description = brand.desc;
+    const [currentTab, setCurrentTab] = useState('builder');
+
+    const handleTabChange = (_, val) => {
+        setCurrentTab(val);
+    };
 
     return (
         <div>
@@ -27,37 +29,19 @@ function AgentWorkflowManagment(props) {
                 <meta property="twitter:title" content={title} />
                 <meta property="twitter:description" content={description} />
             </Helmet>
-            <Papper>
-                <Stack gap={4}>
-                    <Stack direction={'row'} alignItems={'center'} gap={1}>
-                        <Avatar sx={{
-                            backgroundColor: 'background.default',
-                            width: 44,
-                            height: 44,
-                            color: 'primary.main'
-                        }}>
-                            <AccountTreeRounded fontSize='small' />
-                        </Avatar>
-                        <Typography variant='h5' fontWeight={600} fontSize={20}>
-                            Search Workflow
-                        </Typography>
-                    </Stack>
-
-                    {/* Inbound table */}
-                    <TableWrapper title={'Inbound'}>
-                        <WorkflowTable
-                            rows={rows}
-                        />
-                    </TableWrapper>
-
-                    {/* Outbound table */}
-                    <TableWrapper title={'Outbound'}>
-                        <WorkflowTable
-                            rows={rows}
-                        />
-                    </TableWrapper>
-                </Stack>
+            <Papper disablePadding>
+                <TabContext value={currentTab}>
+                    <Header
+                        handleTabChange={handleTabChange}
+                    />
+                    {/* Content */}
+                    <TabPanel value="builder">Builder</TabPanel>
+                    <TabPanel value="settings">Settings</TabPanel>
+                    <TabPanel value="enrollment_history">Enrollment History</TabPanel>
+                    <TabPanel value="execution_logs">Execution logs</TabPanel>
+                </TabContext>
             </Papper>
+
         </div>
     );
 }

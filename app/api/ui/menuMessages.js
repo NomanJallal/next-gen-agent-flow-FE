@@ -508,13 +508,13 @@ export default defineMessages({
     id: `${scope}.pages.agnets_creation`,
     defaultMessage: 'Agents master setting/creation',
   },
-  workflow_managment: {
-    id: `${scope}.pages.workflow_managment`,
-    defaultMessage: 'Agent Workflow managment',
-  },
   workflows: {
     id: `${scope}.pages.workflows`,
     defaultMessage: 'Agent Workflows',
+  },
+  managment: {
+    id: `${scope}.pages.managment`,
+    defaultMessage: 'Agent Workflow managment',
   },
   workflow_templates: {
     id: `${scope}.pages.workflow_templates`,

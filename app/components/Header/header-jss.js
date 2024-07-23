@@ -412,7 +412,6 @@ const useStyles = makeStyles()((theme, _params, classes) => ({
     color: theme.palette.text.primary,
     fontWeight: 700,
     fontSize: 20,
-    textTransform: 'capitalize',
   },
   fadeOut: {},
   invert: {},

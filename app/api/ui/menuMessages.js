@@ -512,9 +512,9 @@ export default defineMessages({
     id: `${scope}.pages.workflows`,
     defaultMessage: 'Agent Workflows',
   },
-  managment: {
-    id: `${scope}.pages.managment`,
-    defaultMessage: 'Agent Workflow managment',
+  management: {
+    id: `${scope}.pages.management`,
+    defaultMessage: 'Agent Workflow management',
   },
   workflow_templates: {
     id: `${scope}.pages.workflow_templates`,

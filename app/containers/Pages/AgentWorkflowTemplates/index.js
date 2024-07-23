@@ -9,9 +9,9 @@ import Card from '@mui/material/Card';
 import { toUnitless } from '@mui/material/styles/cssUtils';
 import { SelectBox, SearchInput } from '../../../components/common';
 
-function AgentWorkFlow(props) {
+function AgentWorkflowTemplates(props) {
   const { intl } = props;
-  const title = brand.name + ' - Agents';
+  const title = brand.name + ' - Workflow Templates';
   const description = brand.desc;
   const [filters, setFilters] = React.useState({
     search: '',
@@ -109,6 +109,6 @@ function AgentWorkFlow(props) {
   );
 }
 
-AgentWorkFlow.propTypes = { intl: PropTypes.object.isRequired };
+AgentWorkflowTemplates.propTypes = { intl: PropTypes.object.isRequired };
 
-export default injectIntl(AgentWorkFlow);
+export default injectIntl(AgentWorkflowTemplates);

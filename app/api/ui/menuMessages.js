@@ -512,8 +512,12 @@ export default defineMessages({
     id: `${scope}.pages.workflow_managment`,
     defaultMessage: 'Agent Workflow managment',
   },
-  agnet_workflow: {
-    id: `${scope}.pages.agent_workflow`,
+  workflows: {
+    id: `${scope}.pages.workflows`,
+    defaultMessage: 'Agent Workflows',
+  },
+  workflow_templates: {
+    id: `${scope}.pages.workflow_templates`,
     defaultMessage: 'Create agent workflow from template',
   },
   call_logs: {

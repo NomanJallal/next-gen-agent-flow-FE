@@ -13,8 +13,9 @@ import {
   Parent,
   Agents,
   AgentCreation,
+  AgentWorkflows,
   AgentWorkflowManagment,
-  AgentWorkFlow,
+  AgentWorkflowTemplates,
   CallLogs,
 } from '../pageListAsync';
 
@@ -37,8 +38,9 @@ function Application(props) {
         {/* New pages */}
         <Route path="/agents" element={<Agents />} />
         <Route path="/agents/creation" element={<AgentCreation />} />
+        <Route path="/agents/workflows" element={<AgentWorkflows />} />
         <Route path="/agents/workflow_managment" element={<AgentWorkflowManagment />} />
-        <Route path="/agents/agent_workflow" element={<AgentWorkFlow />} />
+        <Route path="/agents/workflow_templates" element={<AgentWorkflowTemplates />} />
         <Route path="/agents/call_logs" element={<CallLogs />} />
       </Routes>
     </Dashboard>

@@ -3,19 +3,30 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import brand from 'enl-api/dummy/brand';
 import { Papper } from 'enl-components';
-import { Stack, Card, CardContent, Typography, Box, Tabs, Tab, Avatar } from '@mui/material';
+import { Stack, Card, CardContent, Typography, Box, Tabs, Tab, Avatar, Grid, Button } from '@mui/material';
 import { injectIntl } from 'react-intl';
 import { SelectBox, SearchInput } from '../../../components/common';
 import useStyles from './calllogs-jss';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
-
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import TimerIcon from '@mui/icons-material/Timer';
+import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import CallIcon from '@mui/icons-material/Call';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
-
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import DeleteIcon from '@mui/icons-material/Delete';
+import BlockIcon from '@mui/icons-material/Block';
+import AddIcon from '@mui/icons-material/Add';
+const data = [
+  { id: 1, phone: '+1 325 283 2377', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
+  { id: 2, phone: '+1 325 283 4277', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
+  { id: 3, phone: '+1 325 283 15277', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
+  { id: 4, phone: '+1 325 283 15527', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
+  { id: 5, phone: '+1 325 283 15743', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
+  { id: 6, phone: '+1 325 283 15131', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
+  // Add more card data as needed
+];
 function CallLogs(props) {
   const [value, setValue] = useState('0');
   const { intl } = props;
@@ -27,31 +38,8 @@ function CallLogs(props) {
     type: '',
   });
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
-  const renderCard = (phoneNumber, date, daysAgo, duration, time, isSelected) => (
-    <Card sx={{ width: '100%', backgroundColor: isSelected ? "#E1E6FE" : "", textAlign: "left" }}>
-      <CardContent>
-        <Typography style={{ color: isSelected ? "#3F51B5" : "#000000", fontWeight: "400", fontSize: "20px" }} component="div">
-          {phoneNumber}
-        </Typography>
-        <Typography style={{ color: isSelected ? "#3F51B5" : "#00000066", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-          <CalendarTodayIcon fontSize='small' /> {date}
-        </Typography>
-        <Typography style={{ color: isSelected ? "#3F51B5" : "#00000066", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-          <TimerOutlinedIcon fontSize='small' /> {daysAgo}
-        </Typography>
-        <Typography style={{ color: isSelected ? "#3F51B5" : "#00000066", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-          <CallIcon fontSize='small' /> {duration}
-        </Typography>
-        <Typography style={{ color: isSelected ? "#3F51B5" : "#00000066", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-          <AccessTimeIcon fontSize='small' /> {time}
-        </Typography>
-      </CardContent>
-    </Card>
-  );
+  const [selectedCard, setSelectedCard] = useState(3);
 
   return (
     <div>
@@ -78,226 +66,91 @@ function CallLogs(props) {
             placeholder={'Search Call types'}
           />
         </Stack>
-        <Box sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 500 }}>
-          <TabContext value={value}>
-            <Tabs
-              orientation="vertical"
-              variant="scrollable"
-              value={value}
-              onChange={handleChange}
-              aria-label="Vertical tabs example"
-              sx={{ borderRight: 1, borderColor: 'divider' }}
-            >
-              <Tab label={<>
-                <Card sx={{ backgroundColor: "#E1E6FE", textAlign: "left", width: "348px", padding: "16px 24px 16px 24px", gap: "40px", border: "0px 0px 1px 0px solid #E0E0E0", opacity: "0px" }}>
-                  <CardContent>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "20px",height:"24px",lineHeight:"24px" }} component="div">
-                      +1 325 283 1578
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CalendarTodayIcon fontSize='small' /> July 25, 2024
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <TimerOutlinedIcon fontSize='small' /> 7 Days ago
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CallIcon fontSize='small' /> 11 Second
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <AccessTimeIcon fontSize='small' />6:42 PM
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </>
-              }
-                value="0">
-                  
-                </Tab>
-              <Tab label={<>
-                <Card sx={{ backgroundColor: "#fff", textAlign: "left", width: "348px", padding: "16px 24px 16px 24px", gap: "40px", border: "0px 0px 1px 0px", opacity: "0px" }}>
-                  <CardContent>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "20px" }} component="div">
-                      +1 325 283 1577
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CalendarTodayIcon fontSize='small' /> July 25, 2024
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <TimerOutlinedIcon fontSize='small' /> 7 Days ago
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CallIcon fontSize='small' /> 11 Second
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <AccessTimeIcon fontSize='small' />6:42 PM
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </>
-              }
-                value="2">
-
-                </Tab>
-              <Tab label={<>
-                <Card sx={{ backgroundColor: "#ffff", textAlign: "left", width: "348px", padding: "16px 24px 16px 24px", gap: "40px", border: "0px 0px 1px 0px", opacity: "0px" }}>
-                  <CardContent>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "20px" }} component="div">
-                      +1 325 283 1577
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CalendarTodayIcon fontSize='small' /> July 25, 2024
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <TimerOutlinedIcon fontSize='small' /> 7 Days ago
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CallIcon fontSize='small' /> 11 Second
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <AccessTimeIcon fontSize='small' />6:42 PM
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </>
-              }
-                value="3">
-
-                </Tab>
-              <Tab label={<>
-                <Card sx={{ backgroundColor: "#fffff", textAlign: "left", width: "348px", padding: "16px 24px 16px 24px", gap: "40px", border: "0px 0px 1px 0px", opacity: "0px" }}>
-                  <CardContent>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "20px" }} component="div">
-                      +1 325 283 1577
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CalendarTodayIcon fontSize='small' /> July 25, 2024
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <TimerOutlinedIcon fontSize='small' /> 7 Days ago
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <CallIcon fontSize='small' /> 11 Second
-                    </Typography>
-                    <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
-                      <AccessTimeIcon fontSize='small' />6:42 PM
-                    </Typography>
-                  </CardContent>
-                </Card>
-              </>
-              }
-                value="4">
-
-                </Tab>
-            </Tabs>
-            <TabPanel value="0">
-              <Card>
-                <CardContent>
-                  <Avatar />
-                  <Typography variant="h5" component="div">
-                    Item One
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Description for Item One
-                  </Typography>
-                  <Typography variant="body2">
-                    Detailed content for Item One.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </TabPanel>
-            <TabPanel value="1">
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    Item Two
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Description for Item Two
-                  </Typography>
-                  <Typography variant="body2">
-                    Detailed content for Item Two.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </TabPanel>
-            <TabPanel value="2">
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    Item Threes
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Description for Item Three
-                  </Typography>
-                  <Typography variant="body2">
-                    Detailed content for Item Three.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </TabPanel>
-            <TabPanel value="3">
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    Item Four
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Description for Item Four
-                  </Typography>
-                  <Typography variant="body2">
-                    Detailed content for Item Four.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </TabPanel>
-            <TabPanel value="4">
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    Item Five
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Description for Item Five
-                  </Typography>
-                  <Typography variant="body2">
-                    Detailed content for Item Five.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </TabPanel>
-            <TabPanel value="5">
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    Item Six
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Description for Item Six
-                  </Typography>
-                  <Typography variant="body2">
-                    Detailed content for Item Six.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </TabPanel>
-            <TabPanel value="6">
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" component="div">
-                    Item Seven
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    Description for Item Seven
-                  </Typography>
-                  <Typography variant="body2">
-                    Detailed content for Item Seven.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </TabPanel>
-          </TabContext>
-        </Box>
       </Papper>
+
+      <Grid container spacing={2} style={{ height: '100vh' }}>
+        <Grid item xs={4} style={{ height: '100vh', overflowY: 'auto' }} >
+          <Box sx={{ display: 'flex', flexDirection: 'column', border: "none", }} >
+            {data.map((item) => (
+              <Card
+                key={item.id}
+                sx={{
+                  backgroundColor: "#fff",
+                  textAlign: "left",
+                  width: "348px",
+                  padding: "16px 24px",
+                  border: "0px 0px 1px 0px",
+                  opacity: "0.9",
+                  transition: "opacity 0.3s",
+                  cursor: "pointer",
+                  // backgroundColor:selectedCard?"##E1E6FE":""
+                  
+                }}
+                onClick={() => setSelectedCard(item)}
+              >
+                <CardContent>
+                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "20px" ,mb:2}}>
+                    {item.phone}
+                  </Typography>
+                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                    <CalendarTodayIcon fontSize='small' /> {item.date}
+                  </Typography>
+                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                    <TimerOutlinedIcon fontSize='small' /> {item.daysAgo}
+                  </Typography>
+                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                    <CallIcon fontSize='small' /> {item.callDuration}
+                  </Typography>
+                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                    <AccessTimeIcon fontSize='small' /> {item.time}
+                  </Typography>
+                </CardContent>
+              </Card>
+            ))}
+          </Box>
+        </Grid>
+        {/* 70% Column */}
+        <Grid item xs={8} style={{ padding: '16px' }}>
+          {selectedCard ? (
+            <Box>
+              <Box display="flex" alignItems="center" gap={2}>
+                <Avatar sx={{ width: 70, height: 70 }}></Avatar>
+                <Typography variant="h5" style={{ fontWeight: "500", fontSize: "24px", lineLeight: "29.05px", }}>Unknown Caller</Typography>
+              </Box>
+              <Typography variant="h4" sx={{ marginTop: 2,fontWeight: "500", fontSize: "20px", lineLeight: "24.05px",mb:2 }} >{selectedCard.phone}</Typography>
+              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }} >
+                <CalendarTodayIcon fontSize='small' />  {selectedCard.date}
+              </Typography>
+              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                <TimerOutlinedIcon fontSize='small' />  {selectedCard.daysAgo}
+              </Typography>
+              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                <CallIcon fontSize='small' />  {selectedCard.callDuration}
+              </Typography>
+              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                <AccessTimeIcon fontSize='small' />  {selectedCard.time}
+              </Typography>
+              <Box display="flex" gap={2} sx={{ marginTop: 2 }}>
+                <Button variant="outlined" startIcon={<StarBorderIcon />} color="primary">
+                  Add to Favorite
+                </Button>
+                <Button variant="outlined" startIcon={<AddIcon />} color="secondary">
+                  Add Contact
+                </Button>
+                <Button variant="outlined" startIcon={<DeleteIcon />} color="error">
+                  Delete
+                </Button>
+                <Button variant="outlined" startIcon={<BlockIcon />} color="error">
+                  Block Number
+                </Button>
+              </Box>
+            </Box>
+          ) : (
+            <Typography>Select a card to view details</Typography>
+          )}
+        </Grid>
+      </Grid>
+
     </div>
   );
 }

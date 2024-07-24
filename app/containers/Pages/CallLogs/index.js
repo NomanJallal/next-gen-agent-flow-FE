@@ -92,7 +92,7 @@ function CallLogs(props) {
                 <Card sx={{ backgroundColor: "#E1E6FE", textAlign: "left", width: "348px", padding: "16px 24px 16px 24px", gap: "40px", border: "0px 0px 1px 0px solid #E0E0E0", opacity: "0px" }}>
                   <CardContent>
                     <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "20px",height:"24px",lineHeight:"24px" }} component="div">
-                      +1 325 283 1577
+                      +1 325 283 1578
                     </Typography>
                     <Typography style={{ color: "#3F51B5", fontWeight: "400", fontSize: "13px" }} sx={{ mb: 1.5 }} color="text.secondary">
                       <CalendarTodayIcon fontSize='small' /> July 25, 2024

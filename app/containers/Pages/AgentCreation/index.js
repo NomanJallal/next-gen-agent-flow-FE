@@ -1,31 +1,35 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import brand from "enl-api/dummy/brand";
-import { Papper } from "enl-components";
-import { Stack, Grid } from "@mui/material";
-import { injectIntl } from "react-intl";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import brand from 'enl-api/dummy/brand';
+import { Papper } from 'enl-components';
+import { Stack, Grid } from '@mui/material';
+import { injectIntl } from 'react-intl';
+import Button from '@mui/material/Button';
 
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
-import MenuItem from "@mui/material/MenuItem";
-import Card from "@mui/material/Card";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Switch from "@mui/material/Switch";
-import Sliderbar from "./comps/Sliderbar";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import FormControl from '@mui/material/FormControl';
+import MenuItem from '@mui/material/MenuItem';
+import Card from '@mui/material/Card';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Switch from '@mui/material/Switch';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import Sliderbar from './comps/Sliderbar';
+
+// icons
 
 function AgentCreation(props) {
   const location = useLocation();
   const history = { location };
-  const title = brand.name + " - Blank Page";
+  const title = brand.name + ' - Blank Page';
   const description = brand.desc;
 
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -33,7 +37,46 @@ function AgentCreation(props) {
     slidesToScroll: 1,
   };
 
-  const label = { inputProps: { "aria-label": "Switch demo" } };
+  const label = { inputProps: { 'aria-label': 'Switch demo' } };
+
+  const dummyData = [
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+    {
+      name: 'John Doe',
+      phone: '1234567890',
+    },
+  ];
 
   return (
     <div>
@@ -46,7 +89,7 @@ function AgentCreation(props) {
         <meta property="twitter:description" content={description} />
       </Helmet>
       <Papper>
-        <Box sx={{ width: "100%" }}>
+        <Box sx={{ width: '100%' }}>
           <Grid
             container
             rowSpacing={1}
@@ -55,17 +98,17 @@ function AgentCreation(props) {
             <Grid item xs={5}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "24px",
+                  fontFamily: 'Inter',
+                  fontSize: '24px',
                   fontWeight: 600,
-                  lineHeight: "29.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '29.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 Profile
               </p>
-              <p style={{ fontSize: "14px", fontWeight: 400 }}>
+              <p style={{ fontSize: '14px', fontWeight: 400 }}>
                 Customize your agent’s name and greeting messages
               </p>
             </Grid>
@@ -73,62 +116,54 @@ function AgentCreation(props) {
               <Grid
                 container
                 rowSpacing={1}
-              // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
               >
                 <Grid item xs={12}>
-                  <p style={{ fontSize: "16px", fontWeight: 500 }}>Name</p>
+                  <p style={{ fontSize: '16px', fontWeight: 500 }}>Name</p>
                   <TextField
-                    id="outlined-basic"
-                    label="Outlined"
-                    variant="outlined"
+                    inputProps={{ 'aria-label': 'Without label' }}
                     fullWidth
                     sx={{
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: "12px",
+                      '& .MuiOutlinedInput-root': {
+                        borderRadius: '12px',
                       },
                     }}
                   />
 
                   <p
                     style={{
-                      fontSize: "16px",
+                      fontSize: '16px',
                       fontWeight: 500,
-                      marginTop: "10px",
+                      marginTop: '10px',
                     }}
                   >
                     Greeting
                   </p>
                   <TextField
-                    style={{ borderRadius: "25px" }}
-                    id="outlined-basic"
-                    label="Outlined"
-                    variant="outlined"
+                    inputProps={{ 'aria-label': 'Without label' }}
                     fullWidth
                     sx={{
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: "12px",
+                      '& .MuiOutlinedInput-root': {
+                        borderRadius: '12px',
                       },
                     }}
                   />
 
                   <p
                     style={{
-                      fontSize: "16px",
+                      fontSize: '16px',
                       fontWeight: 500,
-                      marginTop: "10px",
+                      marginTop: '10px',
                     }}
                   >
                     Hang-up Message
                   </p>
                   <TextField
-                    style={{ borderRadius: "25px" }}
-                    id="outlined-basic"
-                    label="Outlined"
-                    variant="outlined"
+                    inputProps={{ 'aria-label': 'Without label' }}
                     fullWidth
                     sx={{
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: "12px",
+                      '& .MuiOutlinedInput-root': {
+                        borderRadius: '12px',
                       },
                     }}
                   />
@@ -138,7 +173,7 @@ function AgentCreation(props) {
           </Grid>
         </Box>
 
-        <Box sx={{ width: "100%", marginTop: "80px" }}>
+        <Box sx={{ width: '100%', marginTop: '80px' }}>
           <Grid
             container
             rowSpacing={1}
@@ -147,17 +182,17 @@ function AgentCreation(props) {
             <Grid item xs={5}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "24px",
+                  fontFamily: 'Inter',
+                  fontSize: '24px',
                   fontWeight: 600,
-                  lineHeight: "29.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '29.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 Instructions
               </p>
-              <p style={{ fontSize: "14px", fontWeight: 400 }}>
+              <p style={{ fontSize: '14px', fontWeight: 400 }}>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -174,19 +209,18 @@ function AgentCreation(props) {
               <Grid
                 container
                 rowSpacing={1}
-              // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
               >
                 <Grid item xs={12}>
                   <TextField
-                    id="outlined-multiline-static"
-                    label="Multiline"
+                    inputProps={{ 'aria-label': 'Without label' }}
                     multiline
                     rows={4}
                     placeholder="You are a cheerful helpful assistant"
                     fullWidth
                     sx={{
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: "12px",
+                      '& .MuiOutlinedInput-root': {
+                        borderRadius: '12px',
                       },
                     }}
                   />
@@ -196,7 +230,7 @@ function AgentCreation(props) {
           </Grid>
         </Box>
 
-        <Box sx={{ width: "100%", marginTop: "80px" }}>
+        <Box sx={{ width: '100%', marginTop: '80px' }}>
           <Grid
             container
             rowSpacing={1}
@@ -205,24 +239,23 @@ function AgentCreation(props) {
             <Grid item xs={12}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "24px",
+                  fontFamily: 'Inter',
+                  fontSize: '24px',
                   fontWeight: 600,
-                  lineHeight: "29.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '29.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 Profile
               </p>
               <FormControl fullWidth>
-                <p style={{ fontSize: "14px", fontWeight: 400 }}>
+                <p style={{ fontSize: '14px', fontWeight: 400 }}>
                   Choose Language
                 </p>
                 <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="Age"
+                  inputProps={{ 'aria-label': 'Without label' }}
+                  fullWidth
                 >
                   <MenuItem value={10}>English</MenuItem>
                   <MenuItem value={20}>Urdu</MenuItem>
@@ -234,254 +267,83 @@ function AgentCreation(props) {
                 container
                 rowSpacing={1}
                 columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                style={{ marginTop: "30px" }}
+                style={{ marginTop: '30px' }}
               >
                 <Grid item xs={9}>
                   <Slider {...settings}>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <img
-                        src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
-                        style={{
-                          width: "75px",
-                          height: "75px",
-                          borderRadius: "50px",
-                        }}
-                      />
-                      <p>Benjamin</p>
-                      <div
-                        style={{
-                          height: "40px",
-                          width: "40px",
-                          borderRadius: "50px",
-                          backgroundColor: "#2196F34D",
-                          marginLeft: "18px",
-                        }}
-                      >
-                        <i
-                          className="fa fa-solid fa-play"
-                          style={{ color: "#000" }}
-                        />
-                      </div>
-                    </div>
+                    {dummyData.map((items) => (
+                      <>
+                        <div>
+                          <img
+                            src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg"
+                            style={{
+                              width: '75px',
+                              height: '75px',
+                              borderRadius: '50px',
+                            }}
+                          />
+                          <p>Benjamin</p>
+                          <div
+                            style={{
+                              height: '40px',
+                              width: '40px',
+                              borderRadius: '50px',
+                              backgroundColor: '#2196F34D',
+                              marginLeft: '18px',
+                              display: 'flex',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                            }}
+                          >
+                            <PlayArrowIcon style={{ color: '#2196F3' }} />
+                          </div>
+                        </div>
+                      </>
+                    ))}
                   </Slider>
                 </Grid>
                 <Grid item xs={1}>
                   <div
                     style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
                     }}
                   >
-                    <p style={{ textAlign: "center", marginTop: "100%" }}>Or</p>
+                    <p style={{ textAlign: 'center', marginTop: '100%' }}>Or</p>
                   </div>
                 </Grid>
                 <Grid item xs={2}>
-                  <Card style={{ border: "1px solid #3F51B5" }}>
+                  <Card style={{ border: '1px solid #3F51B5' }}>
                     <div
                       style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        padding: "25px 0px",
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '25px 0px',
                       }}
                     >
-                      <div style={{ marginTop: "10px" }}>
+                      <div style={{ marginTop: '10px' }}>
                         <div
                           style={{
-                            margin: "auto",
-                            height: "40px",
-                            width: "40px",
-                            borderRadius: "50px",
-                            backgroundColor: "#3F51B5",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
+                            margin: 'auto',
+                            height: '40px',
+                            width: '40px',
+                            borderRadius: '50px',
+                            backgroundColor: '#3F51B5',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
                           }}
                         >
-                          <p style={{ color: "#fff", marginTop: "12px" }}>OP</p>
+                          <p style={{ color: '#fff', marginTop: '12px' }}>OP</p>
                         </div>
                         <p
                           style={{
-                            fontSize: "20px",
+                            fontSize: '20px',
                             fontWeight: 400,
-                            color: "#3F51B5",
-                            marginTop: "10px",
+                            color: '#3F51B5',
+                            marginTop: '10px',
                           }}
                         >
                           Clone a voice
@@ -495,7 +357,7 @@ function AgentCreation(props) {
           </Grid>
         </Box>
 
-        <Box sx={{ width: "100%", marginTop: "80px" }}>
+        <Box sx={{ width: '100%', marginTop: '80px' }}>
           <Grid
             container
             rowSpacing={1}
@@ -504,27 +366,27 @@ function AgentCreation(props) {
             <Grid item xs={12}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "24px",
+                  fontFamily: 'Inter',
+                  fontSize: '24px',
                   fontWeight: 600,
-                  lineHeight: "29.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '29.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 Voice Options
               </p>
             </Grid>
 
-            <Grid item xs={4} style={{ marginTop: "20px" }}>
+            <Grid item xs={4} style={{ marginTop: '20px' }}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "14px",
+                  fontFamily: 'Inter',
+                  fontSize: '14px',
                   fontWeight: 400,
-                  lineHeight: "16.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '16.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 Interrupt Security
@@ -532,15 +394,15 @@ function AgentCreation(props) {
 
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: "15px",
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginTop: '15px',
                 }}
               >
                 <p
                   style={{
-                    marginTop: "10px",
-                    fontSize: "14px",
+                    marginTop: '10px',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
@@ -549,8 +411,8 @@ function AgentCreation(props) {
                 <Switch />
                 <p
                   style={{
-                    marginTop: "10px",
-                    fontSize: "14px",
+                    marginTop: '10px',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
@@ -560,8 +422,8 @@ function AgentCreation(props) {
               <div>
                 <p
                   style={{
-                    textAlign: "center",
-                    fontSize: "14px",
+                    textAlign: 'center',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
@@ -571,15 +433,15 @@ function AgentCreation(props) {
               </div>
             </Grid>
 
-            <Grid item xs={4} style={{ marginTop: "20px" }}>
+            <Grid item xs={4} style={{ marginTop: '20px' }}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "14px",
+                  fontFamily: 'Inter',
+                  fontSize: '14px',
                   fontWeight: 400,
-                  lineHeight: "16.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '16.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 Response Speed
@@ -587,15 +449,15 @@ function AgentCreation(props) {
 
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: "15px",
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginTop: '15px',
                 }}
               >
                 <p
                   style={{
-                    marginTop: "10px",
-                    fontSize: "14px",
+                    marginTop: '10px',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
@@ -604,8 +466,8 @@ function AgentCreation(props) {
                 <Switch />
                 <p
                   style={{
-                    marginTop: "10px",
-                    fontSize: "14px",
+                    marginTop: '10px',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
@@ -615,8 +477,8 @@ function AgentCreation(props) {
               <div>
                 <p
                   style={{
-                    textAlign: "center",
-                    fontSize: "14px",
+                    textAlign: 'center',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
@@ -626,15 +488,15 @@ function AgentCreation(props) {
               </div>
             </Grid>
 
-            <Grid item xs={4} style={{ marginTop: "20px" }}>
+            <Grid item xs={4} style={{ marginTop: '20px' }}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "14px",
+                  fontFamily: 'Inter',
+                  fontSize: '14px',
                   fontWeight: 400,
-                  lineHeight: "16.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '16.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 AI Creativity
@@ -642,16 +504,16 @@ function AgentCreation(props) {
 
               <div
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginTop: "15px",
-                  display: "none",
+                  // display: "flex",
+                  alignItems: 'center',
+                  marginTop: '15px',
+                  display: 'none',
                 }}
               >
                 <p
                   style={{
-                    marginTop: "10px",
-                    fontSize: "14px",
+                    marginTop: '10px',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
@@ -660,22 +522,22 @@ function AgentCreation(props) {
                 <Switch />
                 <p
                   style={{
-                    marginTop: "10px",
-                    fontSize: "14px",
+                    marginTop: '10px',
+                    fontSize: '14px',
                     fontweight: 400,
                   }}
                 >
                   High
                 </p>
               </div>
-              <div style={{ marginTop: "30px" }}>
+              <div style={{ marginTop: '30px' }}>
                 <Sliderbar />
               </div>
             </Grid>
           </Grid>
         </Box>
 
-        <Box sx={{ width: "100%", marginTop: "80px" }}>
+        <Box sx={{ width: '100%', marginTop: '80px' }}>
           <Grid
             container
             rowSpacing={1}
@@ -684,17 +546,17 @@ function AgentCreation(props) {
             <Grid item xs={5}>
               <p
                 style={{
-                  fontFamily: "Inter",
-                  fontSize: "24px",
+                  fontFamily: 'Inter',
+                  fontSize: '24px',
                   fontWeight: 600,
-                  lineHeight: "29.05px",
-                  textAlign: "left",
-                  marginBottom: "5px",
+                  lineHeight: '29.05px',
+                  textAlign: 'left',
+                  marginBottom: '5px',
                 }}
               >
                 Advance
               </p>
-              <p style={{ fontSize: "14px", fontWeight: 400 }}>
+              <p style={{ fontSize: '14px', fontWeight: 400 }}>
                 Advance agent settings
               </p>
             </Grid>
@@ -702,14 +564,12 @@ function AgentCreation(props) {
               <Grid
                 container
                 rowSpacing={1}
-              // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+                // columnSpacing={{ xs: 1, sm: 2, md: 3 }}
               >
                 <Grid item xs={12}>
-                  <p style={{ fontSize: "16px", fontWeight: 500 }}>Time Zone</p>
+                  <p style={{ fontSize: '16px', fontWeight: 500 }}>Time Zone</p>
                   <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Age"
+                    inputProps={{ 'aria-label': 'Without label' }}
                     fullWidth
                   >
                     <MenuItem value={10}>English</MenuItem>
@@ -717,53 +577,51 @@ function AgentCreation(props) {
                     <MenuItem value={30}>Arabic</MenuItem>
                   </Select>
 
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Switch />
-                    <p style={{ marginTop: "10px" }}>
+                    <p style={{ marginTop: '10px' }}>
                       Start call with a scenario (skip greetings).
                     </p>
                   </div>
 
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Switch />
-                    <p style={{ marginTop: "10px" }}>
+                    <p style={{ marginTop: '10px' }}>
                       Play ”this maybe transcribed for quality and tanning
                       purpose “ Declaimer before each call.
                     </p>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Switch />
-                    <p style={{ marginTop: "10px" }}>
+                    <p style={{ marginTop: '10px' }}>
                       Enable post call analysis to get call summaries enabled
                       (Recommended)
                     </p>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Switch />
-                    <p style={{ marginTop: "10px" }}>
+                    <p style={{ marginTop: '10px' }}>
                       Strict mode (Recommended)
                     </p>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Switch />
-                    <p style={{ marginTop: "10px" }}>
+                    <p style={{ marginTop: '10px' }}>
                       Email transcript with summary after call
                     </p>
                   </div>
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Switch />
-                    <p style={{ marginTop: "10px" }}>
+                    <p style={{ marginTop: '10px' }}>
                       Enable experimental transcription engine
                     </p>
                   </div>
 
-                  <p style={{ fontSize: "16px", fontWeight: 500 }}>
+                  <p style={{ fontSize: '16px', fontWeight: 500 }}>
                     Transcription Language
                   </p>
                   <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Age"
+                    inputProps={{ 'aria-label': 'Without label' }}
                     fullWidth
                   >
                     <MenuItem value={10}>English</MenuItem>
@@ -773,17 +631,15 @@ function AgentCreation(props) {
 
                   <p
                     style={{
-                      fontSize: "16px",
+                      fontSize: '16px',
                       fontWeight: 500,
-                      marginTop: "7px",
+                      marginTop: '7px',
                     }}
                   >
                     Key Phrases
                   </p>
                   <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Age"
+                    inputProps={{ 'aria-label': 'Without label' }}
                     fullWidth
                   >
                     <MenuItem value={10}>English</MenuItem>
@@ -791,9 +647,9 @@ function AgentCreation(props) {
                     <MenuItem value={30}>Arabic</MenuItem>
                   </Select>
 
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
                     <Switch />
-                    <p style={{ marginTop: "10px" }}>
+                    <p style={{ marginTop: '10px' }}>
                       Automatically delete call transcripts
                     </p>
                   </div>
@@ -802,6 +658,40 @@ function AgentCreation(props) {
             </Grid>
           </Grid>
         </Box>
+
+        <Grid
+          sx={{ marginTop: '80px' }}
+          container
+          direction="row"
+          justifyContent="start"
+          alignItems="center"
+        >
+          <Button
+            variant="contained"
+            sx={{
+              borderRadius: '4px',
+              color: '#fff',
+              border: 'none',
+              backgroundColor: '#2196F3',
+            }}
+          >
+            Save & Continue
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              borderRadius: '4px',
+              color: '#2196F3',
+              border: '1px solid #0000001F',
+              marginLeft: '10px',
+              '&:hover': {
+                border: '1px solid #2196F3',
+              },
+            }}
+          >
+            Reset
+          </Button>
+        </Grid>
       </Papper>
     </div>
   );

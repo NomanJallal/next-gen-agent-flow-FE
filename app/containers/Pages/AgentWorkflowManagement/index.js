@@ -7,6 +7,7 @@ import { injectIntl } from 'react-intl';
 import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
 import Header from './comps/Header';
+import Settings from './comps/Settings';
 
 function AgentWorkflowManagement(props) {
     const { intl } = props;
@@ -35,7 +36,9 @@ function AgentWorkflowManagement(props) {
                     />
                     {/* Content */}
                     <TabPanel value="builder">Builder</TabPanel>
-                    <TabPanel value="settings">Settings</TabPanel>
+                    <TabPanel value="settings">
+                        <Settings/>
+                    </TabPanel>
                     <TabPanel value="enrollment_history">Enrollment History</TabPanel>
                     <TabPanel value="execution_logs">Execution logs</TabPanel>
                 </TabContext>

@@ -7,6 +7,10 @@ import { Stack, Grid } from '@mui/material';
 import { injectIntl } from 'react-intl';
 import Card from '@mui/material/Card';
 import { toUnitless } from '@mui/material/styles/cssUtils';
+
+// icons
+import BarChartIcon from '@mui/icons-material/BarChart';
+import CompareIcon from '@mui/icons-material/Compare';
 import { SelectBox, SearchInput } from '../../../components/common';
 
 function AgentWorkflowTemplates(props) {
@@ -21,42 +25,42 @@ function AgentWorkflowTemplates(props) {
   const workFlowData = [
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <CompareIcon/>,
       title: 'Insurance',
     },
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <BarChartIcon/>,
       title: 'Real Estate',
     },
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <CompareIcon/>,
       title: 'Insurance',
     },
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <CompareIcon/>,
       title: 'Insurance',
     },
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <CompareIcon/>,
       title: 'Insurance',
     },
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <CompareIcon/>,
       title: 'Insurance',
     },
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <CompareIcon/>,
       title: 'Insurance',
     },
     {
       id: 1,
-      icon: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
+      icon: <CompareIcon/>,
       title: 'Insurance',
     },
   ];
@@ -93,8 +97,9 @@ function AgentWorkflowTemplates(props) {
               <Grid item xs={12} md={6} lg={3} key={items.title}>
                 <Card style={{ padding: '10px 0px', border: '1px solid #E0E0E0' }}>
                   <div style={{
-                    height: '60px', width: '60px', backgroundColor: '#304FFE3B', borderRadius: '50px', margin: 'auto'
+                    height: '60px', width: '60px', backgroundColor: '#304FFE3B', borderRadius: '50px', margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#304FFE'
                   }}>
+                    {items.icon}
                   </div>
                   <p style={{
                     fontSize: '16px', fontWeight: 500, textAlign: 'center', marginTop: '10px'

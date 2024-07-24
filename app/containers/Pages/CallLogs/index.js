@@ -45,7 +45,7 @@ function CallLogs(props) {
           />
         </Stack>
         {/* work below */}
-        Work here
+      Call Logs History 
       </Papper>
     </div>
   );

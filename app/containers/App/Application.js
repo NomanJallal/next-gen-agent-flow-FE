@@ -17,6 +17,7 @@ import {
   AgentWorkflowManagement,
   AgentWorkflowTemplates,
   CallLogs,
+  Contact
 } from '../pageListAsync';
 
 function Application(props) {
@@ -42,6 +43,7 @@ function Application(props) {
         <Route path="/agents/workflows/management" element={<AgentWorkflowManagement />} />
         <Route path="/agents/workflow_templates" element={<AgentWorkflowTemplates />} />
         <Route path="/agents/call_logs" element={<CallLogs />} />
+        <Route path="/agents/Contact" element={<Contact />} />
       </Routes>
     </Dashboard>
   );

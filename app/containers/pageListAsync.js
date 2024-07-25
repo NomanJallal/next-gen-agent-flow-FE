@@ -99,3 +99,8 @@ export const CallLogs = loadable(() =>
   import('./Pages/CallLogs'), {
   fallback: <Loading />,
 });
+
+export const Contact = loadable(() =>
+  import('./Pages/Contact'), {
+  fallback: <Loading />,
+});

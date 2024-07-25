@@ -8,6 +8,7 @@ import TabContext from '@mui/lab/TabContext';
 import TabPanel from '@mui/lab/TabPanel';
 import Header from './comps/Header';
 import Settings from './comps/Settings';
+import Builder from './comps/Builder';
 
 function AgentWorkflowManagement(props) {
     const { intl } = props;
@@ -35,9 +36,11 @@ function AgentWorkflowManagement(props) {
                         handleTabChange={handleTabChange}
                     />
                     {/* Content */}
-                    <TabPanel value="builder">Builder</TabPanel>
+                    <TabPanel value="builder" sx={{ p: 0 }}>
+                        <Builder />
+                    </TabPanel>
                     <TabPanel value="settings">
-                        <Settings/>
+                        <Settings />
                     </TabPanel>
                     <TabPanel value="enrollment_history">Enrollment History</TabPanel>
                     <TabPanel value="execution_logs">Execution logs</TabPanel>

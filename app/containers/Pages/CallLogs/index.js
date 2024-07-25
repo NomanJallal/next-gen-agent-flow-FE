@@ -128,6 +128,7 @@ function CallLogs(props) {
                     </Typography>
                   </Box>
                 </Grid>
+                {/* Buttons */}
                 <Grid xs={3}>
                   <Box >
                     <Button sx={{ mt: 2, width: "100%" }} variant="outlined" startIcon={<StarBorderIcon />} color="info">

@@ -7,27 +7,19 @@ import { Stack, Card, CardContent, Typography, Box, Tabs, Tab, Avatar, Grid, But
 import { injectIntl } from 'react-intl';
 import { SelectBox, SearchInput } from '../../../components/common';
 import useStyles from './calllogs-jss';
-import TabContext from '@mui/lab/TabContext';
-import TabPanel from '@mui/lab/TabPanel';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
 import CallIcon from '@mui/icons-material/Call';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import DeleteIcon from '@mui/icons-material/Delete';
 import BlockIcon from '@mui/icons-material/Block';
 import AddIcon from '@mui/icons-material/Add';
-const data = [
-  { id: 1, phone: '+1 325 283 2377', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
-  { id: 2, phone: '+1 325 283 4277', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
-  { id: 3, phone: '+1 325 283 15277', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
-  { id: 4, phone: '+1 325 283 15527', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
-  { id: 5, phone: '+1 325 283 15743', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
-  { id: 6, phone: '+1 325 283 15131', date: 'July 25, 2024', daysAgo: '7 Days ago', callDuration: '11 Seconds', time: '6:42 PM' },
-  // Add more card data as needed
-];
+import PersonIcon from '@mui/icons-material/Person';
+
+import { callsData } from './callsData';
 function CallLogs(props) {
+  console.log(callsData)
   const [value, setValue] = useState('0');
   const { intl } = props;
   const { classes } = useStyles();
@@ -39,7 +31,7 @@ function CallLogs(props) {
   });
 
 
-  const [selectedCard, setSelectedCard] = useState(3);
+  const [selectedCard, setSelectedCard] = useState(1);
 
   return (
     <div>
@@ -71,11 +63,11 @@ function CallLogs(props) {
       <Grid container spacing={2} style={{ height: '100vh' }}>
         <Grid item xs={4} style={{ height: '100vh', overflowY: 'auto' }} >
           <Box sx={{ display: 'flex', flexDirection: 'column', border: "none", }} >
-            {data.map((item) => (
+            {callsData.map((item) => (
               <Card
                 key={item.id}
                 sx={{
-                  backgroundColor: "#fff",
+                  // backgroundColor: "#fff",
                   textAlign: "left",
                   width: "348px",
                   padding: "16px 24px",
@@ -83,25 +75,25 @@ function CallLogs(props) {
                   opacity: "0.9",
                   transition: "opacity 0.3s",
                   cursor: "pointer",
-                  // backgroundColor:selectedCard?"##E1E6FE":""
-                  
+                  backgroundColor: selectedCard?.id === item.id ? "#E1E6FE" : "#fff"
+
                 }}
                 onClick={() => setSelectedCard(item)}
               >
                 <CardContent>
-                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "20px" ,mb:2}}>
+                  <Typography sx={{ color: selectedCard?.id === item.id ? "#3F51B5" : "#000000", fontWeight: 400, fontSize: "20px", mb: 2 }}>
                     {item.phone}
                   </Typography>
-                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                  <Typography sx={{ color: selectedCard?.id === item.id ? "#3F51B5" : "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
                     <CalendarTodayIcon fontSize='small' /> {item.date}
                   </Typography>
-                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                  <Typography sx={{ color: selectedCard?.id === item.id ? "#3F51B5" : "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
                     <TimerOutlinedIcon fontSize='small' /> {item.daysAgo}
                   </Typography>
-                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                  <Typography sx={{ color: selectedCard?.id === item.id ? "#3F51B5" : "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
                     <CallIcon fontSize='small' /> {item.callDuration}
                   </Typography>
-                  <Typography sx={{ color: "#3F51B5", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                  <Typography sx={{ color: selectedCard?.id === item.id ? "#3F51B5" : "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
                     <AccessTimeIcon fontSize='small' /> {item.time}
                   </Typography>
                 </CardContent>
@@ -114,36 +106,45 @@ function CallLogs(props) {
           {selectedCard ? (
             <Box>
               <Box display="flex" alignItems="center" gap={2}>
-                <Avatar sx={{ width: 70, height: 70 }}></Avatar>
-                <Typography variant="h5" style={{ fontWeight: "500", fontSize: "24px", lineLeight: "29.05px", }}>Unknown Caller</Typography>
+                <Avatar sx={{ width: 70, height: 70, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <PersonIcon />
+                </Avatar>                <Typography variant="h5" style={{ fontWeight: "500", fontSize: "24px", lineLeight: "29.05px", }}>Unknown Caller</Typography>
               </Box>
-              <Typography variant="h4" sx={{ marginTop: 2,fontWeight: "500", fontSize: "20px", lineLeight: "24.05px",mb:2 }} >{selectedCard.phone}</Typography>
-              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }} >
-                <CalendarTodayIcon fontSize='small' />  {selectedCard.date}
-              </Typography>
-              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
-                <TimerOutlinedIcon fontSize='small' />  {selectedCard.daysAgo}
-              </Typography>
-              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
-                <CallIcon fontSize='small' />  {selectedCard.callDuration}
-              </Typography>
-              <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1,color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
-                <AccessTimeIcon fontSize='small' />  {selectedCard.time}
-              </Typography>
-              <Box display="flex" gap={2} sx={{ marginTop: 2 }}>
-                <Button variant="outlined" startIcon={<StarBorderIcon />} color="primary">
-                  Add to Favorite
-                </Button>
-                <Button variant="outlined" startIcon={<AddIcon />} color="secondary">
-                  Add Contact
-                </Button>
-                <Button variant="outlined" startIcon={<DeleteIcon />} color="error">
-                  Delete
-                </Button>
-                <Button variant="outlined" startIcon={<BlockIcon />} color="error">
-                  Block Number
-                </Button>
-              </Box>
+              <Grid container spacing={2} sx={{ mt: 2 }}>
+                <Grid xs={9} >
+                  <Box>
+                    <Typography variant="h4" sx={{ marginTop: 2, fontWeight: "500", fontSize: "20px", lineLeight: "24.05px", mb: 2 }} >{selectedCard.phone}</Typography>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1, color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }} >
+                      <CalendarTodayIcon fontSize='small' />  {selectedCard.date}
+                    </Typography>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1, color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                      <TimerOutlinedIcon fontSize='small' />  {selectedCard.daysAgo}
+                    </Typography>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1, color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                      <CallIcon fontSize='small' />  {selectedCard.callDuration}
+                    </Typography>
+                    <Typography variant="body1" sx={{ display: 'flex', alignItems: 'center', gap: 1, color: "#00000066", fontWeight: 400, fontSize: "13px", mb: 1.5 }}>
+                      <AccessTimeIcon fontSize='small' />  {selectedCard.time}
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Grid xs={3}>
+                  <Box >
+                    <Button sx={{ mt: 2, width: "100%" }} variant="outlined" startIcon={<StarBorderIcon />} color="info">
+                      Add to Favorite
+                    </Button>
+                    <Button sx={{ mt: 2, width: "100%" }} variant="outlined" startIcon={<AddIcon />} color="primary">
+                      Add Contact
+                    </Button>
+                    <Button sx={{ mt: 2, width: "100%" }} variant="outlined" startIcon={<DeleteIcon />} color="error">
+                      Delete
+                    </Button>
+                    <Button sx={{ mt: 2, width: "100%" }} variant="outlined" startIcon={<BlockIcon />} color="error">
+                      Block Number
+                    </Button>
+                  </Box>
+                </Grid>
+              </Grid>
             </Box>
           ) : (
             <Typography>Select a card to view details</Typography>

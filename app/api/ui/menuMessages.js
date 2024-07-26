@@ -524,4 +524,8 @@ export default defineMessages({
     id: `${scope}.pages.call_logs`,
     defaultMessage: 'Call Logs',
   },
+  contacts: {
+    id: `${scope}.pages.contacts`,
+    defaultMessage: 'Contacts',
+  },
 });

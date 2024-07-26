@@ -12,7 +12,7 @@ const SearchInput = (props) => {
             sx={{
                 backgroundColor: '#EFEFF1',
                 borderRadius: 1.5,
-                width: 180,
+                minWidth: 180,
                 '& .MuiOutlinedInput-root': {
                     '& fieldset': {
                         border: 'none',

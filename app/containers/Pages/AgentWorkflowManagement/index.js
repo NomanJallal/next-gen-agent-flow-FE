@@ -40,7 +40,8 @@ function AgentWorkflowManagement(props) {
                         <Builder />
                     </TabPanel>
                     <TabPanel value="settings">
-                        <Settings />
+                        Settings
+                        {/* <Settings /> */}
                     </TabPanel>
                     <TabPanel value="enrollment_history">Enrollment History</TabPanel>
                     <TabPanel value="execution_logs">Execution logs</TabPanel>

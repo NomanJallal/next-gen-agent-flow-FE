@@ -3,8 +3,9 @@ import { darken } from '@mui/material/styles';
 
 const useStyles = makeStyles()((theme, _params, classes) => ({
   root: {
+    height: 'auto',
+    minHeight: 'calc(100svh - 96px)',
     padding: theme.spacing(2),
-    marginBottom: theme.spacing(3),
     boxShadow: theme?.shade?.light,
     color: theme.palette.text.primary,
     borderRadius: theme.spacing(2),

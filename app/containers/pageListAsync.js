@@ -100,7 +100,7 @@ export const CallLogs = loadable(() =>
   fallback: <Loading />,
 });
 
-export const Contact = loadable(() =>
-  import('./Pages/Contact'), {
+export const Contacts = loadable(() =>
+  import('./Pages/Contacts'), {
   fallback: <Loading />,
 });

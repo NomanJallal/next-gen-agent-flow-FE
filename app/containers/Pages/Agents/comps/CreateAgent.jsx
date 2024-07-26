@@ -1,13 +1,15 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 import { Stack, Avatar, Typography, alpha, Button } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
 
 const CreateAgent = ({ type }) => {
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        console.log('Create Agent Clicked');
+        navigate('/app/agents/creation');
     }
 
     if (type == 'button') {

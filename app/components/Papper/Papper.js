@@ -12,6 +12,7 @@ function Papper(props) {
     noMargin,
     colorMode,
     overflowX,
+    sx
   } = props;
 
   const color = mode => {
@@ -36,6 +37,7 @@ function Papper(props) {
           )
         }
         elevation={0}
+        sx={sx}
       >
         {children}
       </Paper>

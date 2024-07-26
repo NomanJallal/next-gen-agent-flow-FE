@@ -10,6 +10,7 @@ import Header from './comps/Header';
 import Settings from './comps/Settings';
 import Builder from './comps/Builder';
 import EnrollmentHistory from './comps/EnrollmentHistory';
+import ExecutionLog from './comps/ExecutionLog';
 
 function AgentWorkflowManagement(props) {
   const { intl } = props;
@@ -44,7 +45,7 @@ function AgentWorkflowManagement(props) {
             <Settings />
           </TabPanel>
           <TabPanel value="enrollment_history"><EnrollmentHistory/></TabPanel>
-          <TabPanel value="execution_logs">Execution logs</TabPanel>
+          <TabPanel value="execution_logs"><ExecutionLog/></TabPanel>
         </TabContext>
       </Papper>
 

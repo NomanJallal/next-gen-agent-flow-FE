@@ -20,7 +20,7 @@ const SelectBox = (props) => {
         <FormControl
             fullWidth={fullWidth}
             variant="outlined"
-            sx={{ minWidth: 180 }}
+            sx={{ minWidth: 200 }}
             size={size || 'small'}
         >
             {label ? (

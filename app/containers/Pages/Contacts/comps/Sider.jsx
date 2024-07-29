@@ -25,6 +25,7 @@ const Sider = () => {
             borderRight: 1,
             borderColor: 'divider',
             maxWidth: 348,
+            minHeight: '600px',
         }}>
             <Typography sx={{ fontSize: '24px', fontWeight: 500, py: 2, mb: 2 }}>
                 Contacts

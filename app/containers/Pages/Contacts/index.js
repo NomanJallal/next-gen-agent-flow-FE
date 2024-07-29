@@ -32,9 +32,9 @@ function Contacts(props) {
         <meta property="twitter:description" content={description} />
       </Helmet>
       <Papper disablePadding sx={{ display: 'flex', boxShadow: 'none !important' }}>
-        <Stack direction={'row'} sx={{ height: '100%' }}>
+        <Stack direction={'row'} sx={{ flexGrow: 1, width: '100%' }}>
           <Sider />
-          <Stack flexGrow={1}>
+          <Stack flexGrow={1} sx={{ minHeight: '600px' }}>
             <Stack
               direction={'row'}
               gap={3}

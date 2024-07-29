@@ -104,3 +104,13 @@ export const Contacts = loadable(() =>
   import('./Pages/Contacts'), {
   fallback: <Loading />,
 });
+
+export const BlockNumbers = loadable(() =>
+  import('./Pages/BlockNumbers'), {
+  fallback: <Loading />,
+});
+
+export const TeamSelection = loadable(() =>
+  import('./Pages/TeamSelection'), {
+  fallback: <Loading />,
+});

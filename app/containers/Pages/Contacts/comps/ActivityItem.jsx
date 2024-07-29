@@ -10,10 +10,6 @@ import {
     CallOutlined,
     TimerOutlined,
 } from '@mui/icons-material';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import TimerOutlinedIcon from '@mui/icons-material/TimerOutlined';
-import CallIcon from '@mui/icons-material/Call';
 
 const ActivityItem = ({ extra }) => {
 

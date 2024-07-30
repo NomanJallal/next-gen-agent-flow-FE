@@ -52,6 +52,7 @@ function Application(props) {
         <Route path="/agents/team_selection" element={<TeamSelection />} />
         <Route path="/agents/create_team" element={<CreateTeam />} />
         <Route path="/agents/team_users" element={<TeamUsers />} />
+        {/* testing after deleting server folder */}
       </Routes>
     </Dashboard>
   );

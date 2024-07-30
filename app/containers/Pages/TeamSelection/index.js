@@ -48,12 +48,13 @@ function TeamSelection(props) {
                 Your teams
               </Typography>
             </Box>
-            <Box direction={'row'}>
-              <Button variant="outlined" sx={{ borderRadius: '4px', width: '175px' }}><PeopleAltIcon />TEAMS</Button>&nbsp;
-              <Button variant="outlined" sx={{ borderRadius: '4px', width: '175px' }}><PersonAddIcon /> INVITATIONS</Button>&nbsp;
-              <Button variant="outlined" sx={{ borderRadius: '4px', width: '175px' }}><LinkIcon />REFERRAL</Button>&nbsp;
-              <Button variant="outlined" color="error" sx={{ borderRadius: '4px', width: '175px' }}><ExitToAppIcon />EXIT</Button>
-            </Box>
+
+            <Stack direction={'row'} gap={1}>
+              <Button variant="outlined" sx={{ borderRadius: '4px', minWidth: '175px' }} startIcon={<PeopleAltIcon />}>TEAMS</Button>
+              <Button variant="outlined" sx={{ borderRadius: '4px', minWidth: '175px' }} startIcon={<PersonAddIcon />}>INVITATIONS</Button>
+              <Button variant="outlined" sx={{ borderRadius: '4px', minWidth: '175px' }} startIcon={<LinkIcon />}>REFERRAL</Button>
+              <Button variant="outlined" color="error" sx={{ borderRadius: '4px', minWidth: '175px' }} startIcon={<ExitToAppIcon />}>EXIT</Button>
+            </Stack>
           </Stack>
 
           <Teams />

@@ -54,7 +54,7 @@ function TeamUsers(props) {
               </Typography>
             </Box>
             <Box direction={'row'}>
-              <Button variant="outlined" sx={{ borderRadius: '4px', width: '175px' }}><PersonAddIcon /> INVITATIONS</Button>&nbsp;
+              <Button variant="outlined" sx={{ borderRadius: '4px', width: '175px' }} startIcon={<PersonAddIcon />}>INVITATIONS</Button>
             </Box>
           </Stack>
 

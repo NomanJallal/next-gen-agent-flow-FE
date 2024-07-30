@@ -11,6 +11,7 @@ import {
   Form,
   Table,
   Parent,
+  Overview,
   Agents,
   AgentCreation,
   AgentWorkflows,
@@ -21,7 +22,9 @@ import {
   BlockNumbers,
   TeamSelection,
   CreateTeam,
-  TeamUsers
+  TeamUsers,
+  TeamSettings,
+  TeamCalendar,
 } from '../pageListAsync';
 
 function Application(props) {
@@ -32,7 +35,7 @@ function Application(props) {
     <Dashboard history={history} changeMode={changeMode}>
       <Routes>
         { /* Home */}
-        <Route exact path="/" element={<BlankPage />} />
+        <Route exact path="/" element={<Overview />} />
         <Route path="pages/dashboard" element={<DashboardPage />} />
         <Route path="pages/form" element={<Form />} />
         <Route path="pages/table" element={<Table />} />
@@ -47,11 +50,15 @@ function Application(props) {
         <Route path="/agents/workflows/management" element={<AgentWorkflowManagement />} />
         <Route path="/agents/workflow_templates" element={<AgentWorkflowTemplates />} />
         <Route path="/agents/call_logs" element={<CallLogs />} />
-        <Route path="/agents/contacts" element={<Contacts />} />
-        <Route path="/agents/block_numbers" element={<BlockNumbers />} />
-        <Route path="/agents/team_selection" element={<TeamSelection />} />
-        <Route path="/agents/create_team" element={<CreateTeam />} />
-        <Route path="/agents/team_users" element={<TeamUsers />} />
+        {/* contacts */}
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/contacts/block_numbers" element={<BlockNumbers />} />
+        {/* team */}
+        <Route path="/team" element={<TeamSelection />} />
+        <Route path="/team/create" element={<CreateTeam />} />
+        <Route path="/team/users" element={<TeamUsers />} />
+        <Route path="/team/settings" element={<TeamSettings />} />
+        <Route path="/team/calendar" element={<TeamCalendar />} />
       </Routes>
     </Dashboard>
   );

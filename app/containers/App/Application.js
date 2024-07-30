@@ -19,7 +19,9 @@ import {
   CallLogs,
   Contacts,
   BlockNumbers,
-  TeamSelection
+  TeamSelection,
+  CreateTeam,
+  TeamUsers
 } from '../pageListAsync';
 
 function Application(props) {
@@ -48,6 +50,8 @@ function Application(props) {
         <Route path="/agents/contacts" element={<Contacts />} />
         <Route path="/agents/block_numbers" element={<BlockNumbers />} />
         <Route path="/agents/team_selection" element={<TeamSelection />} />
+        <Route path="/agents/create_team" element={<CreateTeam />} />
+        <Route path="/agents/team_users" element={<TeamUsers />} />
       </Routes>
     </Dashboard>
   );

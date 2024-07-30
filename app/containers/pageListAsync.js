@@ -114,3 +114,13 @@ export const TeamSelection = loadable(() =>
   import('./Pages/TeamSelection'), {
   fallback: <Loading />,
 });
+
+export const CreateTeam = loadable(() =>
+  import('./Pages/CreateTeam'), {
+  fallback: <Loading />,
+});
+
+export const TeamUsers = loadable(() =>
+  import('./Pages/TeamUsers'), {
+  fallback: <Loading />,
+});

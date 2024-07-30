@@ -75,6 +75,11 @@ export const Agents = loadable(() =>
   fallback: <Loading />,
 });
 
+export const Overview = loadable(() =>
+  import('./Pages/Overview'), {
+  fallback: <Loading />,
+});
+
 export const AgentCreation = loadable(() =>
   import('./Pages/AgentCreation'), {
   fallback: <Loading />,
@@ -122,5 +127,13 @@ export const CreateTeam = loadable(() =>
 
 export const TeamUsers = loadable(() =>
   import('./Pages/TeamUsers'), {
+  fallback: <Loading />,
+});
+export const TeamSettings = loadable(() =>
+  import('./Pages/TeamSettings'), {
+  fallback: <Loading />,
+});
+export const TeamCalendar = loadable(() =>
+  import('./Pages/TeamCalendar'), {
   fallback: <Loading />,
 });

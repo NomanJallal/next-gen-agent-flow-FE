@@ -182,7 +182,7 @@ function Header(props) {
                 className={classes.pageTitle}
                 sx={{ minWidth: 120 }}
               >
-                {menuMessages[title] !== undefined ? <FormattedMessage {...menuMessages[title]} /> : title}
+                {menuMessages[title] !== undefined ? <FormattedMessage {...menuMessages[title]} /> : title == 'app' ? 'Overview' : title}
               </Typography>
               <HeaderActions />
             </Stack>

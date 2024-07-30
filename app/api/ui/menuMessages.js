@@ -500,6 +500,10 @@ export default defineMessages({
     id: `${scope}.sub_menu_2`,
     defaultMessage: 'Sub Menu 2',
   },
+  overview: {
+    id: `${scope}.pages.overview`,
+    defaultMessage: 'Overview',
+  },
   agents: {
     id: `${scope}.pages.agents`,
     defaultMessage: 'Agents',
@@ -527,5 +531,25 @@ export default defineMessages({
   contacts: {
     id: `${scope}.pages.contacts`,
     defaultMessage: 'Contacts',
+  },
+  block_numbers: {
+    id: `${scope}.pages.block_numbers`,
+    defaultMessage: 'Block Numbers',
+  },
+  team: {
+    id: `${scope}.pages.team`,
+    defaultMessage: 'Team',
+  },
+  create: {
+    id: `${scope}.pages.team.create_team`,
+    defaultMessage: 'Create Team',
+  },
+  users: {
+    id: `${scope}.pages.team.team_users`,
+    defaultMessage: 'Team Users',
+  },
+  calendar: {
+    id: `${scope}.pages.team.calendar`,
+    defaultMessage: 'Team Calendar',
   },
 });

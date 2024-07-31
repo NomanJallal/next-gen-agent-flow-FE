@@ -548,6 +548,10 @@ export default defineMessages({
     id: `${scope}.pages.team.team_users`,
     defaultMessage: 'Team Users',
   },
+  settings: {
+    id: `${scope}.pages.team.settings`,
+    defaultMessage: 'Team Settings',
+  },
   calendar: {
     id: `${scope}.pages.team.calendar`,
     defaultMessage: 'Team Calendar',

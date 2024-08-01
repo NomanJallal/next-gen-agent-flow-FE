@@ -62,7 +62,7 @@ function TeamSettings(props) {
                 <Group fontSize='small' />
               </Avatar>
               <Typography variant='h5' fontWeight={600} fontSize={20}>
-                                Team Settings
+                Team Settings
               </Typography>
             </Stack>
             <Button
@@ -71,7 +71,7 @@ function TeamSettings(props) {
               startIcon={<PersonAdd />}
               variant='outlined'
             >
-                            INVITATION USER
+              INVITATION USER
             </Button>
           </Stack>
           <Box sx={{ p: 2 }}>
@@ -104,7 +104,7 @@ function TeamSettings(props) {
                 <BarChartIcon fontSize='small' />
               </Avatar>
               <Typography variant='h5' fontWeight={600} fontSize={20}>
-                                Statistics
+                Statistics
               </Typography>
             </Stack>
             <Button
@@ -113,7 +113,7 @@ function TeamSettings(props) {
               startIcon={<PersonAdd />}
               variant='outlined'
             >
-                            INVITATION USER
+              INVITATION USER
             </Button>
           </Stack>
           <Box sx={{ p: 2 }}>
@@ -140,7 +140,7 @@ function TeamSettings(props) {
               <SupportAgent fontSize='small' />
             </Avatar>
             <Typography variant='h5' fontWeight={600} fontSize={20}>
-                            Agents
+              Agents
             </Typography>
           </Stack>
           <Box sx={{ p: 2 }}>

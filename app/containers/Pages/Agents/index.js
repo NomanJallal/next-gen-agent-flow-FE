@@ -23,16 +23,10 @@ function Agents(props) {
 
   const dummyData = [
     {
-      username: 'Shun Kim',
-      profile: 'https://img.freepik.com/free-psd/3d-illustration-human-avatar-profile_23-2150671122.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1721260800&semt=ais_user',
-      userId: '21534381ca32s354dsa5646das454',
-      date: '04/18/2024',
+      username: 'Agent 1',
     },
     {
-      username: 'John Wick',
-      profile: 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/d95c1f148207527.62d1246c25004.jpg',
-      userId: '21534381ca3ldji4dsa5646das454',
-      date: '04/30/2024',
+      username: 'Agent 2',
     }
   ];
 

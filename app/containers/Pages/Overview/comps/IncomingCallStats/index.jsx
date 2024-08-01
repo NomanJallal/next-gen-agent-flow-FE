@@ -87,7 +87,7 @@ const IncomingCallStats = () => {
             <Box sx={{ p: 2 }}>
                 <Grid container spacing={1.5}>
                     {data.map((item, i) => (
-                        <Grid key={i} item xs={12} sm={6} md={4} lg={2}>
+                        <Grid key={i} item xs={12} sm={6} md={4} lg={3} xl={2}>
                             <CountCard {...item} filled={!i} />
                         </Grid>
                     ))}

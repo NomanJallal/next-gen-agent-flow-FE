@@ -131,7 +131,7 @@ function TeamCalendar(props) {
                   display: 'block', margin: '0 auto', fontSize: '46.67px', color: '#3F51B5'
                 }} />
                 <Typography sx={{ fontSize: '20px', fontWeight: 400, textAlign: 'center' }}>
-                                    Your block list is empty
+                                    No items
                 </Typography>
               </Box>
             </Box>

@@ -63,14 +63,14 @@ const AddAvailabilitySlots = ({ openCloseModal, open }) => {
                   <AccessTimeIcon fontSize='small' />
                 </Avatar>
                 <Typography variant='h5' fontWeight={600} fontSize={20}>
-                                    Calendar
+                  Calendar
                 </Typography>
               </Stack>
               <Button
                 color='info'
                 variant='outlined'
               >
-                                SAVE
+                SAVE
               </Button>
             </Box>
 

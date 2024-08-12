@@ -1,9 +1,10 @@
 import React from 'react';
 import { Papper } from 'enl-components';
-import { Stack, Typography, Avatar, Box, Button } from '@mui/material';
+import { Stack, Typography, Avatar, Box } from '@mui/material';
 import {
     BarChart
 } from '@mui/icons-material';
+import Chart from './Chart';
 
 const CallLastMonth = () => {
     return (
@@ -35,8 +36,8 @@ const CallLastMonth = () => {
                     </Typography>
                 </Stack>
             </Stack>
-            <Box sx={{ p: 2 }}>
-                Need to work here
+            <Box sx={{ width: '100%', height: 280 }}>
+                <Chart />
             </Box>
         </Papper>
     )

@@ -4,24 +4,26 @@ import { Helmet } from 'react-helmet';
 import brand from 'enl-api/dummy/brand';
 import { Papper } from 'enl-components';
 import {
-  Stack, Typography, Avatar, Box, Button, Card
+  Stack, Typography, Avatar, Box, Button
 } from '@mui/material';
 import { injectIntl } from 'react-intl';
-import {
-  CalendarToday,
-  PersonAdd,
-} from '@mui/icons-material';
+import { CalendarToday, PersonAdd } from '@mui/icons-material';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import AddIcon from '@mui/icons-material/Add';
-import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
-import MeetIcon from './assets/google_meet.png';
+
+import AvaliabilitySlots from './comps/AvaliabilitySlots';
+import LinkGoogleMeet from './comps/LinkGoogleMeet';
+import AddAvailabilitySlots from './comps/AddAvailabilitySlots';
 
 function TeamCalendar(props) {
   const { intl } = props;
   const title = brand.name + ' - Calendar';
   const description = brand.desc;
 
-  const [openModal, setOpenModal] = useState(false);
+  const [open, setOpen] = useState(false);
+  const openCloseModal = () => {
+    setOpen((prev) => !prev);
+  };
 
   return (
     <div>
@@ -60,7 +62,7 @@ function TeamCalendar(props) {
                 <CalendarToday fontSize='small' />
               </Avatar>
               <Typography variant='h5' fontWeight={600} fontSize={20}>
-                                Calendar
+                Calendar
               </Typography>
             </Stack>
             <Button
@@ -68,15 +70,11 @@ function TeamCalendar(props) {
               startIcon={<PersonAdd />}
               variant='outlined'
             >
-                            INVITATION USER
+              INVITATION USER
             </Button>
           </Stack>
           <Box sx={{ p: 2 }}>
-            <Card sx={{ border: '1px solid #D7D7D7', padding: '22px' }}>
-              <img src={MeetIcon} style={{ height: '54px', width: '310px' }} />
-              <Typography sx={{ marginTop: '20px' }} variant='h5' fontWeight={400} fontSize={20}>No Account linked</Typography>
-              <Typography sx={{ marginTop: '10px' }} color={'#AAAAAA'} fontWeight={400} fontSize={18}>Connect to your google calendar from the scenario builder </Typography>
-            </Card>
+            <LinkGoogleMeet />
           </Box>
         </Papper>
 
@@ -106,37 +104,27 @@ function TeamCalendar(props) {
                 <AccessTimeIcon fontSize='small' />
               </Avatar>
               <Typography variant='h5' fontWeight={600} fontSize={20}>
-                                Availability slots
+                Availability slots
               </Typography>
             </Stack>
             <Button
               color='info'
               startIcon={<AddIcon />}
               variant='contained'
+              onClick={openCloseModal}
             >
-                            ADD
+              ADD
             </Button>
           </Stack>
           <Box sx={{ p: 2 }}>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '150px'
-              }}
-            >
-              <Box>
-                <HourglassEmptyIcon sx={{
-                  display: 'block', margin: '0 auto', fontSize: '46.67px', color: '#3F51B5'
-                }} />
-                <Typography sx={{ fontSize: '20px', fontWeight: 400, textAlign: 'center' }}>
-                                    No items
-                </Typography>
-              </Box>
-            </Box>
+            <AvaliabilitySlots />
           </Box>
         </Papper>
+        {
+          open === true ? (
+            <AddAvailabilitySlots openCloseModal={openCloseModal} open={open} />
+          ) : null
+        }
       </Stack>
     </div>
   );

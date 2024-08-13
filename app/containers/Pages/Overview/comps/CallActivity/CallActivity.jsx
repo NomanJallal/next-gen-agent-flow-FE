@@ -2,10 +2,11 @@ import React from 'react';
 import { Papper } from 'enl-components';
 import { Stack, Typography, Avatar, Box, Button } from '@mui/material';
 import {
-    ShowChart
+    Call
 } from '@mui/icons-material';
+import Chart from './Chart'
 
-const CallStateChart = () => {
+const CallActivity = () => {
     return (
         <Papper disablePadding sx={{ minHeight: 'unset !important' }}>
             <Stack
@@ -28,18 +29,24 @@ const CallStateChart = () => {
                         height: 44,
                         color: 'primary.main'
                     }}>
-                        <ShowChart fontSize='small' />
+                        <Call fontSize='small' />
                     </Avatar>
                     <Typography variant='h5' fontWeight={600} fontSize={20}>
-                        Incoming Call Stats
+                        Call Activity
                     </Typography>
                 </Stack>
             </Stack>
             <Box sx={{ p: 2 }}>
-                Need to work here
+
+                <Box sx={{ width: '100%', height: 280 }}>
+
+                    <Chart />
+
+                </Box>
+
             </Box>
         </Papper>
     )
 }
 
-export default CallStateChart
+export default CallActivity

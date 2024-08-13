@@ -1,11 +1,10 @@
 import React from 'react';
 import { Papper } from 'enl-components';
 import { Stack, Typography, Avatar, Box, Button } from '@mui/material';
-import {
-    Contacts
-} from '@mui/icons-material';
+import CallReceivedIcon from '@mui/icons-material/CallReceived';
+import Chart from './Chart';
 
-const TotalContacts = () => {
+const CallStateChart = () => {
     return (
         <Papper disablePadding sx={{ minHeight: 'unset !important' }}>
             <Stack
@@ -28,18 +27,18 @@ const TotalContacts = () => {
                         height: 44,
                         color: 'primary.main'
                     }}>
-                        <Contacts fontSize='small' />
+                        <img src='./images/Graph.png' />
                     </Avatar>
                     <Typography variant='h5' fontWeight={600} fontSize={20}>
-                        Total Contacts
+                        Incoming Call Stats
                     </Typography>
                 </Stack>
             </Stack>
             <Box sx={{ p: 2 }}>
-                Need to work here
+                <Chart />
             </Box>
         </Papper>
     )
 }
 
-export default TotalContacts
+export default CallStateChart

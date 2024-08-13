@@ -1,9 +1,6 @@
 import React from 'react';
 import { Papper } from 'enl-components';
 import { Stack, Typography, Avatar, Box } from '@mui/material';
-import {
-    BarChart
-} from '@mui/icons-material';
 import Chart from './Chart';
 
 const CallLastMonth = () => {
@@ -29,7 +26,7 @@ const CallLastMonth = () => {
                         height: 44,
                         color: 'primary.main'
                     }}>
-                        <BarChart fontSize='small' />
+                       <img src='./images/Graph.png' />
                     </Avatar>
                     <Typography variant='h5' fontWeight={600} fontSize={20}>
                         Call Last Month

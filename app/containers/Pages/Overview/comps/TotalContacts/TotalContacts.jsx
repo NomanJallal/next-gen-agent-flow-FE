@@ -9,7 +9,7 @@ import Chart from './Chart'
 
 const TotalContacts = () => {
     return (
-        <Papper disablePadding sx={{ minHeight: 'unset !important', opacity: "0.3" }}>
+        <Papper disablePadding sx={{ minHeight: 'unset !important', }}>
             <Stack
                 direction={'row'}
                 alignItems={'center'}

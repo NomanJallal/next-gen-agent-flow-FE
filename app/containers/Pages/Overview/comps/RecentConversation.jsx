@@ -1,8 +1,10 @@
 import React from 'react';
 import { Papper } from 'enl-components';
-import { Stack, Typography, Avatar, Box } from '@mui/material';
+import { Stack, Typography, Avatar, Box, Divider } from '@mui/material';
+import { Button } from '@mui/material';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import CallReceivedIcon from '@mui/icons-material/CallReceived';
+import { ArrowForward } from '@mui/icons-material';
 
 const RecentConversation = () => {
     return (
@@ -30,40 +32,28 @@ const RecentConversation = () => {
                         <CallOutlinedIcon fontSize='small' />
                     </Avatar>
                     <Typography variant='h5' fontWeight={600} fontSize={20}>
-                        RecentConversation
+                        Recent Conversation
                     </Typography>
                 </Stack>
             </Stack>
-            <Box sx={{ p: 2 }}>
+            <Box>
+                {Array.from({ length: 3 }, (_, index) => (<>
+                    <Stack key={index} direction={'row'} alignItems={'center'} gap={1} sx={{ py: 2, px: 4 }}>
+                        <CallOutlinedIcon sx={{ color: "primary.main" }} />
+                        <Typography fontWeight={400} fontSize={20} lineHeight={1}>+1 325 283 1577</Typography>
+                        <Stack direction={'row'} alignItems={'center'} fontWeight={400} fontSize={13} color={'text.secondary'}>
+                            <CallReceivedIcon sx={{ fontSize: 15 }} />
+                            July 1, 2025, 02:33pm
+                        </Stack>
+                    </Stack>
+                    <Divider />
+                </>))}
 
-                <Box sx={{ display: "flex", alignItems: "flex-end", marginLeft: "13px", marginBottom: "20px" }}>
-                    <CallOutlinedIcon sx={{ color: "#3F51B5", marginBottom: "3px" }} fontSize='small' />
-                    <Typography fontWeight={400} fontSize={20} color={'#000'} sx={{ marginLeft: "15px" }}>+1 325 283 1577</Typography>
-                    &nbsp;&nbsp;<Box fontWeight={400} fontSize={13} color={'#00000066'} display={'flex'}>
-                        <CallReceivedIcon sx={{ fontSize: "20px" }} />
-                        <Typography >July 1, 2025, 02:33pm </Typography>
-                    </Box>
-                </Box>
-
-                <Box sx={{ display: "flex", alignItems: "flex-end", marginLeft: "10px", marginBottom: "20px" }}>
-                    <CallOutlinedIcon sx={{ color: "#3F51B5", marginBottom: "3px" }} fontSize='small' />
-                    <Typography fontWeight={400} fontSize={20} color={'#000'} sx={{ marginLeft: "15px" }}>+1 325 283 1577</Typography>
-                    &nbsp;&nbsp;<Box fontWeight={400} fontSize={13} color={'#00000066'} display={'flex'}>
-                        <CallReceivedIcon sx={{ fontSize: "20px" }} />
-                        <Typography >July 1, 2025, 02:33pm </Typography>
-                    </Box>
-                </Box>
-
-                <Box sx={{ display: "flex", alignItems: "flex-end", marginLeft: "10px", marginBottom: "20px" }}>
-                    <CallOutlinedIcon sx={{ color: "#3F51B5", marginBottom: "3px" }} fontSize='small' />
-                    <Typography fontWeight={400} fontSize={20} color={'#000'} sx={{ marginLeft: "15px" }}>+1 325 283 1577</Typography>
-                    &nbsp;&nbsp;<Box fontWeight={400} fontSize={13} color={'#00000066'} display={'flex'}>
-                        <CallReceivedIcon sx={{ fontSize: "20px" }} />
-                        <Typography >July 1, 2025, 02:33pm </Typography>
-                    </Box>
-                </Box>
-
-
+                <Stack direction={'row'} alignItems={'center'} gap={1} sx={{ py: 1, px: 3 }}>
+                    <Button size='large' endIcon={<ArrowForward />}>
+                        See more...
+                    </Button>
+                </Stack>
             </Box>
         </Papper>
     )

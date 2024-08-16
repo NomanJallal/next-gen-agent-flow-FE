@@ -9,13 +9,53 @@ import ReactFlow, {
     addEdge,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
+import CustomNode from './CustomNode';
+
+const nodeTypes = {
+    customNode: CustomNode,
+};
 
 const initialNodes = [
-    { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
-    { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
+    {
+        id: '1',
+        type: 'customNode',
+        position: { x: 0, y: 0 },
+        data: { label: 'Scheduling', status1: 'Booked', status2: 'Failed' },
+    },
+    {
+        id: '2',
+        type: 'customNode',
+        position: { x: 200, y: 100 },
+        data: { label: 'Evaluate', status1: 'True', status2: 'False' },
+    },
+    {
+        id: '3',
+        type: 'customNode',
+        position: { x: 400, y: 200 },
+        data: { label: 'Speak', status1: 'Spoke' },
+    },
+    {
+        id: '4',
+        type: 'customNode',
+        position: { x: 600, y: 300 },
+        data: { label: 'Ask Question', status1: 'Answered' },
+    },
+    {
+        id: '5',
+        type: 'customNode',
+        position: { x: 800, y: 400 },
+        data: { label: 'AI Prompt', status1: 'Done', status2: 'Failed' },
+    },
 ];
 
-const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
+const initialEdges = [
+    { id: 'e1-2', source: '1', target: '2' },
+    { id: 'e2-3', source: '2', target: '3' },
+    { id: 'e3-4', source: '3', target: '4' },
+    { id: 'e4-5', source: '4', target: '5' },
+];
+
+
 const Builder = () => {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
@@ -50,6 +90,7 @@ const Builder = () => {
                     onNodesChange={onNodesChange}
                     onEdgesChange={onEdgesChange}
                     onConnect={onConnect}
+                    nodeTypes={nodeTypes}
                 >
                     <MiniMap />
                     <Controls />

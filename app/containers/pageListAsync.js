@@ -90,6 +90,11 @@ export const AgentWorkflows = loadable(() =>
   fallback: <Loading />,
 });
 
+export const WorkflowTriggers = loadable(() =>
+  import('./Pages/WorkflowTriggers'), {
+  fallback: <Loading />,
+});
+
 export const AgentWorkflowManagement = loadable(() =>
   import('./Pages/AgentWorkflowManagement'), {
   fallback: <Loading />,

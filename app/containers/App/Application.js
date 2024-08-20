@@ -25,6 +25,7 @@ import {
   TeamUsers,
   TeamSettings,
   TeamCalendar,
+  WorkflowTriggers,
 } from '../pageListAsync';
 
 function Application(props) {
@@ -48,6 +49,7 @@ function Application(props) {
         <Route path="/agents/creation" element={<AgentCreation />} />
         <Route path="/agents/workflows" element={<AgentWorkflows />} />
         <Route path="/agents/workflows/management" element={<AgentWorkflowManagement />} />
+        <Route path="/agents/workflows/triggers" element={<WorkflowTriggers />} />
         <Route path="/agents/workflow_templates" element={<AgentWorkflowTemplates />} />
         <Route path="/agents/call_logs" element={<CallLogs />} />
         {/* contacts */}

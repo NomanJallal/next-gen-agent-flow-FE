@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ReactFlowProvider } from 'reactflow';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import brand from 'enl-api/dummy/brand';
@@ -39,13 +40,15 @@ function AgentWorkflowManagement(props) {
           />
           {/* Content */}
           <TabPanel value="builder" sx={{ p: 0 }}>
-            <Builder />
+            <ReactFlowProvider>
+              <Builder />
+            </ReactFlowProvider>
           </TabPanel>
           <TabPanel value="settings">
             <Settings />
           </TabPanel>
-          <TabPanel value="enrollment_history"><EnrollmentHistory/></TabPanel>
-          <TabPanel value="execution_logs"><ExecutionLog/></TabPanel>
+          <TabPanel value="enrollment_history"><EnrollmentHistory /></TabPanel>
+          <TabPanel value="execution_logs"><ExecutionLog /></TabPanel>
         </TabContext>
       </Papper>
 

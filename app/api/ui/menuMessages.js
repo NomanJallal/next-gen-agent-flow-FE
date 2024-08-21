@@ -520,6 +520,10 @@ export default defineMessages({
     id: `${scope}.pages.triggers`,
     defaultMessage: 'Workflow Triggers',
   },
+  builder: {
+    id: `${scope}.pages.builder`,
+    defaultMessage: 'Workflow Builder',
+  },
   management: {
     id: `${scope}.pages.management`,
     defaultMessage: 'Agent Workflow management',

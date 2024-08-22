@@ -29,12 +29,6 @@ const Builder = () => {
             setEdges((eds) => addEdge({
                 ...params,
                 type: 'custom',
-                markerEnd: {
-                    type: 'arrowclosed',
-                    width: '14px',
-                    height: '14px',
-                    color: alpha(theme.palette.text.secondary, 0.3)
-                },
             }, eds)),
         []
     );

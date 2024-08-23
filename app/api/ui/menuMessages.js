@@ -504,6 +504,10 @@ export default defineMessages({
     id: `${scope}.pages.overview`,
     defaultMessage: 'Overview',
   },
+  reseller: {
+    id: `${scope}.pages.reseller`,
+    defaultMessage: 'Client Details',
+  },
   agents: {
     id: `${scope}.pages.agents`,
     defaultMessage: 'Agents',

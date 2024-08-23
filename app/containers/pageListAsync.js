@@ -80,6 +80,11 @@ export const Overview = loadable(() =>
   fallback: <Loading />,
 });
 
+export const Reseller = loadable(() =>
+  import('./Pages/Reseller'), {
+  fallback: <Loading />,
+});
+
 export const AgentCreation = loadable(() =>
   import('./Pages/AgentCreation'), {
   fallback: <Loading />,

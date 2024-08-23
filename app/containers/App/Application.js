@@ -27,6 +27,7 @@ import {
   TeamCalendar,
   WorkflowTriggers,
   WorkflowBuilder,
+  Reseller,
 } from '../pageListAsync';
 
 function Application(props) {
@@ -63,6 +64,8 @@ function Application(props) {
         <Route path="/team/users" element={<TeamUsers />} />
         <Route path="/team/settings" element={<TeamSettings />} />
         <Route path="/team/calendar" element={<TeamCalendar />} />
+        {/* Reseller */}
+        <Route path="/reseller" element={<Reseller />} />
       </Routes>
     </Dashboard>
   );

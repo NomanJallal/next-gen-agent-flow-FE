@@ -312,7 +312,14 @@ const useStyles = makeStyles()((theme, _params, classes) => ({
       textOverflow: 'ellipsis',
       overflow: 'hidden',
       whiteSpace: 'nowrap',
-      width: 110
+      maxWidth: 110,
+      marginInline: 'auto',
+      textAlign: 'center',
+    },
+    [`& .${classes.details}`]: {
+      width: '100%',
+      paddingRight: theme.spacing(2.7),
+      paddingLeft: theme.spacing(2.7),
     },
     '& button': {
       fontSize: 12,
@@ -361,7 +368,7 @@ const useStyles = makeStyles()((theme, _params, classes) => ({
     display: 'block',
     padding: 0,
     [`&.${classes.withProfile}`]: {
-      paddingTop: theme.spacing(28)
+      paddingTop: theme.spacing(30)
     },
     [`&.${classes.landingNav}`]: {
       [theme.breakpoints.up('lg')]: {
@@ -403,6 +410,21 @@ const useStyles = makeStyles()((theme, _params, classes) => ({
   },
   badge: {
     height: 'auto'
+  },
+  teamSelector: {
+    textAlign: 'left',
+    marginTop: '8px',
+    marginBottom: '24px',
+    position: 'relative',
+    ".MuiSelect-select": {
+      paddingLeft: '42px',
+    },
+    '.teamIcon': {
+      position: 'absolute',
+      left: '12px',
+      top: '50%',
+      transform: 'translateY(-50%)',
+    }
   }
 }));
 

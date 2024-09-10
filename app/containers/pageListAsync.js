@@ -152,3 +152,7 @@ export const TeamCalendar = loadable(() =>
   import('./Pages/TeamCalendar'), {
   fallback: <Loading />,
 });
+export const Billing = loadable(() =>
+  import('./Pages/Billing'), {
+  fallback: <Loading />,
+});

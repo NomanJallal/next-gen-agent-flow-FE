@@ -12,6 +12,7 @@ import { injectIntl, FormattedMessage } from 'react-intl';
 import messages from 'enl-api/ui/menuMessages';
 import MainMenu from './MainMenu';
 import useStyles from './sidebar-jss';
+import TeamSelector from './TeamSelector';
 
 function SidebarContent(props) {
   const { classes, cx } = useStyles();
@@ -68,8 +69,10 @@ function SidebarContent(props) {
             src={userAttr.avatar}
             className={cx(classes.avatar, classes.bigAvatar)}
           />
-          <div>
+          <div className={classes.details}>
             <h4>{userAttr.name}</h4>
+            {/* Team Selector */}
+            <TeamSelector />
             {/* <Button size="small" onClick={openMenuStatus}>
               <i className={cx(classes.dotStatus, setStatus(status))} />
               <FormattedMessage {...messages[status]} />

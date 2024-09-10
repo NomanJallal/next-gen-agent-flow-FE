@@ -568,4 +568,8 @@ export default defineMessages({
     id: `${scope}.pages.team.calendar`,
     defaultMessage: 'Team Calendar',
   },
+  billing: {
+    id: `${scope}.pages.billing`,
+    defaultMessage: 'Billing',
+  },
 });

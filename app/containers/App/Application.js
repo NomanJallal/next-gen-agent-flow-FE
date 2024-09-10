@@ -28,6 +28,7 @@ import {
   WorkflowTriggers,
   WorkflowBuilder,
   Reseller,
+  Billing,
 } from '../pageListAsync';
 
 function Application(props) {
@@ -66,6 +67,7 @@ function Application(props) {
         <Route path="/team/calendar" element={<TeamCalendar />} />
         {/* Reseller */}
         <Route path="/reseller" element={<Reseller />} />
+        <Route path="/billing" element={<Billing />} />
       </Routes>
     </Dashboard>
   );

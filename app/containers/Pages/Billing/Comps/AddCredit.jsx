@@ -50,11 +50,7 @@ const AddCredit = () => {
                 </Stack>
             </Stack>
             <Box sx={{ p: 3 }}>
-                <Typography variant='h5' fontWeight={600}>Team Configuration</Typography>
-                <Typography variant='body2' color={'text.secondary'}>
-                    Configure your team settings
-                </Typography>
-                <Stack gap={2.5} marginTop={3} width={'100%'}>
+                <Stack gap={2.5} width={'100%'}>
                     <Stack gap={0.5} width={'100%'}>
                         <Typography variant='subtitle2'>
                             Amount
@@ -62,9 +58,11 @@ const AddCredit = () => {
                         <TextField
                             fullWidth
                             variant='outlined'
+                            type='number'
+                            className={classes.input}
                             InputProps={{
                                 startAdornment: <InputAdornment position="start"><AttachMoneyIcon fontSize='small' /></InputAdornment>,
-                                endAdornment: <InputAdornment className={classes.inputEndAdornment} position="end">USD</InputAdornment>,
+                                endAdornment: <InputAdornment position="end">USD</InputAdornment>,
                             }}
                         />
                     </Stack>
@@ -72,7 +70,12 @@ const AddCredit = () => {
                         <Typography variant='subtitle2'>
                             Total Credit
                         </Typography>
-                        <TextField fullWidth variant='outlined' />
+                        <TextField
+                            className={classes.input}
+                            fullWidth
+                            variant='outlined'
+                            type='number'
+                        />
                     </Stack>
                     <Button variant='contained' color='success' size='large' startIcon={<AddCircleIcon fontSize='small' />}>
                         Add credits

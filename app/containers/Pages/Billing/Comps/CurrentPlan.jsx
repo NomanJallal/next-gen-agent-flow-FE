@@ -40,8 +40,9 @@ const CurrentPlan = () => {
                     </Typography>
                 </Stack>
             </Stack>
-            <Box sx={{ p: 2 }}>
-                Current Plan data here
+            <Box sx={{ p: 3 }}>
+                <Typography variant='h6' fontWeight={700}>Pro Bundle</Typography>
+                <Typography variant='body2' color={'text.secondary'}>The pro bundle</Typography>
             </Box>
         </Papper>
     )
